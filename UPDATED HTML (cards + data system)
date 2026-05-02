@@ -1,0 +1,38 @@
+<div class="controls">
+  <button onclick="sortPrice()">🔥 Sort by Price</button>
+</div>
+
+<div class="container">
+
+  <div class="card" data-price="999">
+    <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg">
+    <h2>iPhone 15</h2>
+
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p class="price">$999</p>
+
+    <button onclick="compare('iPhone 15','48MP','3349 mAh')">Compare</button>
+
+    <a class="buy" href="https://www.amazon.com?tag=mobilecompa09-20" target="_blank">
+      💰 Buy on Amazon
+    </a>
+  </div>
+
+  <div class="card" data-price="899">
+    <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-1.jpg">
+    <h2>Samsung S24</h2>
+
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p class="price">$899</p>
+
+    <button onclick="compare('Samsung S24','50MP','4000 mAh')">Compare</button>
+
+    <a class="buy" href="https://www.amazon.com?tag=mobilecompa09-20" target="_blank">
+      💰 Buy on Amazon
+    </a>
+  </div>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup"></div>
