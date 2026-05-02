@@ -1,69 +1,32 @@
-<table class="compare-table">
+.compare-table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background: #1f2937;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-  <tr>
-    <th>Feature</th>
-    <th>📱 Samsung Galaxy S24 Ultra</th>
-    <th>🍎 iPhone 15</th>
-  </tr>
+.compare-table th {
+  background: #111827;
+  padding: 15px;
+}
 
-  <tr>
-    <td>Image</td>
-    <td>
-      <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-1.jpg" width="120">
-    </td>
-    <td>
-      <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg" width="120">
-    </td>
-  </tr>
+.compare-table td {
+  padding: 12px;
+  border-bottom: 1px solid #374151;
+}
 
-  <tr>
-    <td>Price</td>
-    <td>$1299</td>
-    <td>$999</td>
-  </tr>
+.compare-table img {
+  border-radius: 8px;
+}
 
-  <tr>
-    <td>Camera</td>
-    <td>200MP Ultra Zoom 🔥</td>
-    <td>48MP Natural Colors 🍎</td>
-  </tr>
-
-  <tr>
-    <td>Battery</td>
-    <td>5000 mAh 🔋</td>
-    <td>3349 mAh 🔋</td>
-  </tr>
-
-  <tr>
-    <td>Gaming Performance</td>
-    <td>🔥 Very High FPS (Best for Android gaming)</td>
-    <td>🔥 Smooth & optimized (No lag iOS)</td>
-  </tr>
-
-  <tr>
-    <td>Processor</td>
-    <td>Snapdragon 8 Gen 3 💪</td>
-    <td>A16 Bionic ⚡</td>
-  </tr>
-
-  <tr>
-    <td>Display</td>
-    <td>6.8" AMOLED 120Hz</td>
-    <td>6.1" OLED 60Hz</td>
-  </tr>
-
-  <tr>
-    <td>Buy Now</td>
-    <td>
-      <a href="https://www.amazon.com/SAMSUNG-Galaxy-S24-Ultra-Titanium/dp/B0D362HGNP?tag=mobilecompa09-20" target="_blank">
-        💰 Buy Samsung S24 Ultra
-      </a>
-    </td>
-    <td>
-      <a href="https://www.amazon.com/Apple-iPhone-15-128GB-Black/dp/B0CMPMY9ZZ?tag=mobilecompa09-20" target="_blank">
-        💰 Buy iPhone 15
-      </a>
-    </td>
-  </tr>
-
-</table>
+.compare-table a {
+  background: #22c55e;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
