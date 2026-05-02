@@ -118,6 +118,120 @@ document.getElementById("search").addEventListener("keyup", function () {
   });
 });
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Mobile Store</title>
 
-</body>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  background: #111827;
+  padding: 20px;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 60%;
+  border-radius: 6px;
+  border: none;
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #1f2937;
+  width: 220px;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #22c55e;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: red;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📱 Pro Mobile Money Store</h1>
+  <p>🔥 Best Amazon Affiliate Deals</p>
+
+  <input type="text" id="search" placeholder="Search mobile...">
+</header>
+
+<!-- APPLE SECTION -->
+<h2>🍎 Apple Phones</h2>
+<div class="container">
+
+  <div class="card" data-name="iphone 15">
+    <span class="badge">🔥 HOT</span>
+    <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg">
+    <h3>iPhone 15</h3>
+    <p>$999</p>
+    <a href="https://www.amazon.com/Apple-iPhone-15-128GB-Black/dp/B0CMPMY9ZZ?tag=mobilecompa09-20" target="_blank">💰 Buy on Amazon</a>
+  </div>
+
+</div>
+
+<!-- SAMSUNG SECTION -->
+<h2>📱 Samsung Phones</h2>
+<div class="container">
+
+  <div class="card" data-name="samsung s24">
+    <span class="badge">🔥 HOT</span>
+    <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-1.jpg">
+    <h3>Samsung S24</h3>
+    <p>$899</p>
+    <a href="https://www.amazon.com/SAMSUNG-Galaxy-S24-Ultra-Titanium/dp/B0D362HGNP?tag=mobilecompa09-20" target="_blank">💰
+</body> 
 </html>
