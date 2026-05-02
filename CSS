@@ -1,0 +1,19 @@
+body.light {
+  background: #f1f5f9;
+  color: black;
+}
+
+body.light table {
+  background: white;
+  color: black;
+}
+
+.mode-btn {
+  margin: 10px;
+  padding: 10px;
+  background: #ff9900;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
