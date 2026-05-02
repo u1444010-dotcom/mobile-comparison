@@ -1,133 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Compare Store</title>
+ <body>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0f172a;
-  color:white;
-}
+<!-- 🔝 HEADER (PRO) -->
+<header class="topbar">
+  <div class="logo">💰 Pro Mobile Store</div>
 
-/* HEADER */
-header{
-  background:#131921;
-  padding:15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+  <input type="text" id="search" placeholder="Search phones...">
 
-.logo{
-  font-size:22px;
-  font-weight:bold;
-}
-
-.search-box{
-  flex:1;
-  margin:10px;
-}
-
-.search-box input{
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:6px;
-}
-
-/* CATEGORIES */
-.categories{
-  background:#232f3e;
-  padding:10px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.categories a{
-  color:white;
-  text-decoration:none;
-  padding:6px 10px;
-  background:#37475a;
-  border-radius:5px;
-}
-
-/* PRODUCTS */
-.container{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
-  padding:20px;
-}
-
-.card{
-  background:#1f2937;
-  width:220px;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:scale(1.05);
-}
-
-.card img{
-  width:100%;
-  border-radius:8px;
-}
-
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  background:#ff9900;
-  color:black;
-  padding:8px;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
-}
-
-/* TABLE */
-table{
-  width:90%;
-  margin:30px auto;
-  border-collapse:collapse;
-  background:#1f2937;
-}
-
-th,td{
-  border:1px solid #374151;
-  padding:12px;
-  text-align:center;
-}
-
-h2{
-  margin-top:30px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-  <div class="logo">📱 MobileStore</div>
-
-  <div class="search-box">
-    <input type="text" id="search" placeholder="Search mobiles...">
+  <div class="menu">
+    <a href="#">🔥 Deals</a>
+    <a href="#">📱 Phones</a>
+    <a href="#">⭐ Top Rated</a>
+    <a href="#">💸 Budget</a>
   </div>
 </header>
 
-<!-- CATEGORIES -->
+<!-- 📂 CATEGORIES -->
 <div class="categories">
   <a href="#">🍎 Apple</a>
   <a href="#">📱 Samsung</a>
@@ -135,7 +22,7 @@ h2{
   <a href="#">🔥 Best Deals</a>
 </div>
 
-<!-- PRODUCTS -->
+<!-- 🔥 FEATURED PRODUCTS -->
 <h2>🔥 Featured Mobiles</h2>
 
 <div class="container">
@@ -143,81 +30,70 @@ h2{
   <div class="card" data-name="iphone 15">
     <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg">
     <h3>iPhone 15</h3>
-    <p>$999</p>
-    <a href="https://www.amazon.com/Apple-iPhone-15-128GB-Black/dp/B0CMPMY9ZZ?tag=mobilecompa09-20" target="_blank">Buy on Amazon</a>
+    <a href="#">Buy on Amazon</a>
   </div>
 
   <div class="card" data-name="samsung s24">
     <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-1.jpg">
     <h3>Samsung S24</h3>
-    <p>$899</p>
-    <a href="https://www.amazon.com/SAMSUNG-Galaxy-S24-Ultra-Titanium/dp/B0D362HGNP?tag=mobilecompa09-20" target="_blank">Buy on Amazon</a>
+    <a href="#">Buy on Amazon</a>
   </div>
 
 </div>
 
-<!-- 📊 5 MOBILE COMPARISON (FIXED + INSIDE BODY) -->
-<h2>📊 5 Mobile Comparison Table</h2>
+<!-- 📊 COMPARISON TABLE -->
+<h2>📊 Comparison Table</h2>
 
-<table>
-
+<table class="compare-table">
 <tr>
   <th>Feature</th>
-  <th>iPhone Hot 10</th>
-  <th>iPhone 11</th>
-  <th>Samsung A07</th>
-  <th>Mobile 4</th>
-  <th>Mobile 5</th>
-</tr>
-
-<tr>
-  <td>Price</td>
-  <td>$499</td>
-  <td>$599</td>
-  <td>$199</td>
-  <td>---</td>
-  <td>---</td>
+  <th>iPhone</th>
+  <th>Samsung</th>
 </tr>
 
 <tr>
   <td>Camera</td>
-  <td>12MP</td>
-  <td>12MP Dual</td>
-  <td>13MP</td>
-  <td>---</td>
-  <td>---</td>
+  <td>48MP</td>
+  <td>50MP</td>
 </tr>
 
 <tr>
   <td>Battery</td>
-  <td>3000 mAh</td>
-  <td>3110 mAh</td>
-  <td>5000 mAh</td>
-  <td>---</td>
-  <td>---</td>
-</tr>
-
-<tr>
-  <td>Gaming</td>
-  <td>Medium</td>
-  <td>High</td>
-  <td>Basic</td>
-  <td>---</td>
-  <td>---</td>
+  <td>3349 mAh</td>
+  <td>4000 mAh</td>
 </tr>
 
 <tr>
   <td>Buy</td>
   <td><a href="#">Amazon</a></td>
-  <td><a href="https://www.amazon.com/Apple-iPhone-11/dp/B07ZPKN6YR?tag=mobilecompa09-20">Amazon</a></td>
   <td><a href="#">Amazon</a></td>
-  <td>---</td>
-  <td>---</td>
 </tr>
-
 </table>
 
-<!-- SEARCH SCRIPT -->
+<!-- 🔥 TRENDING DEALS -->
+<h2>🔥 Trending Deals</h2>
+
+<div class="container">
+  <div class="card">
+    <h3>iPhone Hot Deal</h3>
+    <a href="#">Buy Now</a>
+  </div>
+
+  <div class="card">
+    <h3>Samsung Sale</h3>
+    <a href="#">Buy Now</a>
+  </div>
+</div>
+
+<!-- 💡 EARNING BOX -->
+<div class="earn-box">
+  <h3>💡 Why Buy From Here?</h3>
+  <p>✔ Verified Amazon Products</p>
+  <p>✔ Best Price Comparison</p>
+  <p>✔ Fast Affiliate Deals</p>
+</div>
+
+<!-- 🔍 SEARCH SCRIPT -->
 <script>
 document.getElementById("search").addEventListener("keyup", function(){
   let value = this.value.toLowerCase();
@@ -231,4 +107,3 @@ document.getElementById("search").addEventListener("keyup", function(){
 </script>
 
 </body>
-</html>
