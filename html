@@ -13,7 +13,7 @@ body{
   color:white;
 }
 
-/* 🔝 AMAZON STYLE HEADER */
+/* HEADER */
 header{
   background:#131921;
   padding:15px;
@@ -40,7 +40,7 @@ header{
   border-radius:6px;
 }
 
-/* CATEGORY BAR */
+/* CATEGORIES */
 .categories{
   background:#232f3e;
   padding:10px;
@@ -58,7 +58,7 @@ header{
   border-radius:5px;
 }
 
-/* PRODUCT GRID */
+/* PRODUCTS */
 .container{
   display:flex;
   justify-content:center;
@@ -118,7 +118,7 @@ h2{
 
 <body>
 
-<!-- 🔝 AMAZON STYLE HEADER -->
+<!-- HEADER -->
 <header>
   <div class="logo">📱 MobileStore</div>
 
@@ -127,7 +127,7 @@ h2{
   </div>
 </header>
 
-<!-- 📂 CATEGORIES -->
+<!-- CATEGORIES -->
 <div class="categories">
   <a href="#">🍎 Apple</a>
   <a href="#">📱 Samsung</a>
@@ -135,7 +135,7 @@ h2{
   <a href="#">🔥 Best Deals</a>
 </div>
 
-<!-- 🔥 PRODUCTS -->
+<!-- PRODUCTS -->
 <h2>🔥 Featured Mobiles</h2>
 
 <div class="container">
@@ -156,48 +156,68 @@ h2{
 
 </div>
 
-<!-- 📊 COMPARISON TABLE -->
-<h2>📊 Comparison Table</h2>
+<!-- 📊 5 MOBILE COMPARISON (FIXED + INSIDE BODY) -->
+<h2>📊 5 Mobile Comparison Table</h2>
 
 <table>
 
 <tr>
   <th>Feature</th>
-  <th>Samsung S24</th>
-  <th>iPhone 15</th>
+  <th>iPhone Hot 10</th>
+  <th>iPhone 11</th>
+  <th>Samsung A07</th>
+  <th>Mobile 4</th>
+  <th>Mobile 5</th>
+</tr>
+
+<tr>
+  <td>Price</td>
+  <td>$499</td>
+  <td>$599</td>
+  <td>$199</td>
+  <td>---</td>
+  <td>---</td>
 </tr>
 
 <tr>
   <td>Camera</td>
-  <td>50MP</td>
-  <td>48MP</td>
+  <td>12MP</td>
+  <td>12MP Dual</td>
+  <td>13MP</td>
+  <td>---</td>
+  <td>---</td>
 </tr>
 
 <tr>
   <td>Battery</td>
-  <td>4000 mAh</td>
-  <td>3349 mAh</td>
+  <td>3000 mAh</td>
+  <td>3110 mAh</td>
+  <td>5000 mAh</td>
+  <td>---</td>
+  <td>---</td>
 </tr>
 
 <tr>
   <td>Gaming</td>
-  <td>🔥 High FPS</td>
-  <td>🔥 Smooth iOS</td>
+  <td>Medium</td>
+  <td>High</td>
+  <td>Basic</td>
+  <td>---</td>
+  <td>---</td>
 </tr>
 
 <tr>
   <td>Buy</td>
-  <td>
-    <a href="https://www.amazon.com/SAMSUNG-Galaxy-S24-Ultra-Titanium/dp/B0D362HGNP?tag=mobilecompa09-20">Amazon</a>
-  </td>
-  <td>
-    <a href="https://www.amazon.com/Apple-iPhone-15-128GB-Black/dp/B0CMPMY9ZZ?tag=mobilecompa09-20">Amazon</a>
-  </td>
+  <td><a href="#">Amazon</a></td>
+  <td><a href="https://www.amazon.com/Apple-iPhone-11/dp/B07ZPKN6YR?tag=mobilecompa09-20">Amazon</a></td>
+  <td><a href="#">Amazon</a></td>
+  <td>---</td>
+  <td>---</td>
 </tr>
 
 </table>
 
-<!-- 🔍 SEARCH SCRIPT -->
+<!-- SEARCH SCRIPT -->
 <script>
 document.getElementById("search").addEventListener("keyup", function(){
   let value = this.value.toLowerCase();
