@@ -1,48 +1,50 @@
 # 📱 Mobile Compare Hub
 
-A simple and clean **mobile comparison website** with Amazon affiliate links.  
-Users can compare smartphones, view specs, and buy directly from Amazon.
+A modern **mobile comparison & Amazon affiliate website** that helps users compare smartphones, check specs, and buy directly from Amazon.
 
 ---
 
-## 🚀 Live Website
+## 🌐 Live Website
 👉 https://u1444010-dotcom.github.io/mobile-comparison/
 
 ---
 
 ## 💡 Features
 
-✔ Mobile phone comparison table  
-✔ Top trending smartphones section  
-✔ Search functionality (instant filter)  
-✔ Amazon affiliate buy buttons  
-✔ Clean responsive design  
-✔ Fast loading static website (GitHub Pages)
+✔ 📊 Mobile comparison tables (10+ specs)  
+✔ 🔍 Instant search filter (live results)  
+✔ 🔥 Trending & featured smartphones section  
+✔ 💰 Amazon affiliate buy buttons  
+✔ 📱 Responsive mobile-friendly design  
+✔ ⚡ Fast loading (static GitHub Pages site)  
+✔ 🎯 SEO-friendly structure  
 
 ---
 
-## 📊 Supported Devices
+## 📱 Supported Devices
 
-- iPhone 15 🍎  
-- Samsung Galaxy S24 📱  
-- More devices can be added easily
+- 🍎 iPhone 15  
+- 📱 Samsung Galaxy S24  
+- 📷 Xiaomi / Redmi series (expandable)  
+- ➕ Easy to add more phones  
 
 ---
 
 ## 💰 Monetization
 
-This website uses **Amazon Associates affiliate links**.
+This project uses **Amazon Associates Affiliate Program**.
 
-When users click "Buy on Amazon", it may generate commission.
+👉 When users click “Buy on Amazon” links,  
+you may earn commission from qualified purchases.
 
 ---
 
-## 🛠️ Tech Used
+## 🛠️ Tech Stack
 
 - HTML5  
 - CSS3  
-- JavaScript (basic search filter)  
-- GitHub Pages (hosting)
+- JavaScript (vanilla)  
+- GitHub Pages (hosting)  
 
 ---
 
