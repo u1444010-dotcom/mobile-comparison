@@ -40,5 +40,66 @@ a {
   padding: 8px 12px;
   color: white;
   text-decoration: none;
+  border-radius: 6px; 
+}
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background: #111827;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 60%;
+  margin-top: 10px;
   border-radius: 6px;
+  border: none;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.card {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #22c55e;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.compare-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #1f2937;
+}
+
+.compare-table th, td {
+  padding: 12px;
+  border: 1px solid #374151;
 }
