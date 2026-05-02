@@ -46,6 +46,12 @@ you may earn commission from qualified purchases.
 - JavaScript (vanilla)  
 - GitHub Pages (hosting)  
 
----
+--- ## 🚀 Future Improvements
+...
+## 📈 Goal
+...
+## ⚠️ Disclaimer
+...
+⭐ If you like this project...
 
 ## 📁 Project Structure
