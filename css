@@ -101,5 +101,64 @@ input {
 
 .compare-table th, td {
   padding: 12px;
-  border: 1px solid #374151;
+  border: 1px solid #374151; 
+}
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background: #111827;
+  padding: 20px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #22c55e;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: red;
+  padding: 4px 6px;
+  font-size: 10px;
+  border-radius: 5px;
 }
