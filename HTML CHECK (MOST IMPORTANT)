@@ -1,4 +1,0 @@
-<div class="search-box">
-    <input type="text" id="search" placeholder="Search phone..." onkeyup="showSuggestions()">
-    <div class="suggestions" id="suggestions"></div>
-</div>
