@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechCompare Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Poppins;
+background:#0a0f2c;
+color:#fff;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#0d1235;
+}
+
+/* SEARCH */
+.search-box{position:relative;}
+
+#search{
+padding:10px;
+width:250px;
+border-radius:10px;
+border:none;
+}
+
+.suggestions{
+position:absolute;
+top:45px;
+width:100%;
+background:#11174a;
+border-radius:10px;
+display:none;
+max-height:220px;
+overflow:auto;
+z-index:100;
+}
+
+.suggestion-item{
+display:flex;
+gap:10px;
+padding:10px;
+cursor:pointer;
+}
+
+.suggestion-item:hover{
+background:#5b6cff;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:#11174a;
+padding:15px;
+border-radius:15px;
+width:180px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00ffcc44;
+}
+
+/* BUTTON */
+button{
+padding:8px;
+border:none;
+border-radius:10px;
+background:#5b6cff;
+color:#fff;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#00ffcc;
+color:#000;
+}
+
+/* GRAPH */
+.bar{
+height:8px;
+background:#1a1f4f;
+border-radius:20px;
+margin:5px 0;
+overflow:hidden;
+}
+
+.bar-fill{
+height:100%;
+background:#00ffcc;
+width:0;
+}
+
+/* ADMIN */
+.admin{
+padding:20px;
+background:#0d1235;
+margin-top:20px;
+}
+
+input{
+padding:8px;
+margin:5px;
+border-radius:8px;
+border:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div>📱 TechCompare Hub</div>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search phone...">
+<div class="suggestions" id="suggestions"></div>
+</div>
+</header>
+
+<!-- CARDS -->
+<div class="cards" id="cards"></div>
+
+<!-- COMPARE -->
+<section style="padding:20px">
+<select id="phone1"></select>
+<select id="phone2"></select>
+<button onclick="compare()">Compare</button>
+
+<div id="result"></div>
+<div id="graph"></div>
+</section>
+
+<!-- ADMIN -->
+<div class="admin">
+<h2>🧑‍💻 Admin Panel</h2>
+
+<input id="name" placeholder="Name">
+<input id="ram" placeholder="RAM">
+<input id="camera" placeholder="Camera">
+<input id="battery" placeholder="Battery">
+<input id="price" placeholder="Price">
+<input id="img" placeholder="Image URL">
+<input id="link" placeholder="Buy Link">
+
+<button onclick="addPhone()">➕ Add Phone</button>
+
+<div id="adminList"></div>
+</div>
+
+<script>
