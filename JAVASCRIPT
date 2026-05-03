@@ -1,0 +1,145 @@
+let phones = [
+{name:"iPhone 14",ram:6,camera:12,battery:3279,price:799,img:"https://via.placeholder.com/80",link:"#"},
+{name:"Samsung S23",ram:8,camera:50,battery:3900,price:699,img:"https://via.placeholder.com/80",link:"#"},
+{name:"Xiaomi 13",ram:8,camera:50,battery:4500,price:499,img:"https://via.placeholder.com/80",link:"#"}
+];
+
+// DOM
+const search=document.getElementById("search");
+const box=document.getElementById("suggestions");
+const cards=document.getElementById("cards");
+const p1=document.getElementById("phone1");
+const p2=document.getElementById("phone2");
+
+// 🔍 SEARCH FIXED
+search.addEventListener("input",()=>{
+let val=search.value.toLowerCase();
+box.innerHTML="";
+
+if(!val){box.style.display="none";return;}
+
+let found=phones.filter(p=>p.name.toLowerCase().includes(val));
+
+if(found.length===0){
+box.innerHTML="<div style='padding:10px'>No result</div>";
+box.style.display="block";
+return;
+}
+
+found.forEach(p=>{
+let div=document.createElement("div");
+div.className="suggestion-item";
+
+div.innerHTML=`
+<img src="${p.img}" width="40">
+<div><b>${p.name}</b><br>$${p.price}</div>
+`;
+
+div.onclick=()=>{
+search.value=p.name;
+box.style.display="none";
+};
+
+box.appendChild(div);
+});
+
+box.style.display="block";
+});
+
+// 🎴 CARDS
+function renderCards(){
+cards.innerHTML="";
+phones.forEach(p=>{
+cards.innerHTML+=`
+<div class="card">
+<img src="${p.img}">
+<h4>${p.name}</h4>
+<p>$${p.price}</p>
+<button onclick="window.open('${p.link}','_blank')">Buy</button>
+</div>`;
+});
+}
+
+// SELECT UPDATE
+function renderSelects(){
+p1.innerHTML="";
+p2.innerHTML="";
+phones.forEach(p=>{
+p1.innerHTML+=`<option>${p.name}</option>`;
+p2.innerHTML+=`<option>${p.name}</option>`;
+});
+}
+
+// 📊 GRAPH
+function graph(a,b){
+document.getElementById("graph").innerHTML=`
+<h3>📊 Comparison</h3>
+
+RAM
+<div class="bar"><div class="bar-fill" style="width:${a.ram*10}%"></div></div>
+<div class="bar"><div class="bar-fill" style="width:${b.ram*10}%"></div></div>
+
+Camera
+<div class="bar"><div class="bar-fill" style="width:${a.camera}%"></div></div>
+<div class="bar"><div class="bar-fill" style="width:${b.camera}%"></div></div>
+
+Battery
+<div class="bar"><div class="bar-fill" style="width:${a.battery/50}%"></div></div>
+<div class="bar"><div class="bar-fill" style="width:${b.battery/50}%"></div></div>
+`;
+}
+
+// ⚖️ COMPARE + 🏆 WINNER
+function compare(){
+
+let a=phones.find(p=>p.name==p1.value);
+let b=phones.find(p=>p.name==p2.value);
+
+let scoreA=a.ram+a.camera+a.battery;
+let scoreB=b.ram+b.camera+b.battery;
+
+document.getElementById("result").innerHTML=
+`<h3>🏆 ${scoreA>scoreB?a.name:b.name} Wins</h3>`;
+
+graph(a,b);
+}
+
+// 🧑‍💻 ADMIN ADD
+function addPhone(){
+
+phones.push({
+name:name.value,
+ram:+ram.value,
+camera:+camera.value,
+battery:+battery.value,
+price:+price.value,
+img:img.value||"https://via.placeholder.com/80",
+link:link.value||"#"
+});
+
+updateAll();
+}
+
+// 🔄 UPDATE ALL
+function updateAll(){
+renderCards();
+renderSelects();
+renderAdmin();
+}
+
+// 🧑‍💻 ADMIN LIST
+function renderAdmin(){
+adminList.innerHTML="";
+phones.forEach((p,i)=>{
+adminList.innerHTML+=`
+<div style="margin:10px">
+${p.name} - $${p.price}
+<button onclick="phones.splice(${i},1);updateAll()">Delete</button>
+</div>`;
+});
+}
+
+// INIT
+renderCards();
+renderSelects();
+renderAdmin();
