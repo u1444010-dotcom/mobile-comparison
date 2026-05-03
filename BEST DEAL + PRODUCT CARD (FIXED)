@@ -1,0 +1,35 @@
+function renderCards(){
+    let box = document.getElementById("cards");
+    box.innerHTML = "";
+
+    for(let name in phones){
+        let phone = phones[name];
+
+        box.innerHTML += `
+        <div class="card">
+            <img src="${phone.img}">
+            
+            <div>
+                <strong>${name}</strong>
+
+                ${parseInt(phone.price.replace("$","")) < 700 ? 
+                `<span style="background:#ffcc00;color:#000;padding:2px 6px;border-radius:5px;font-size:10px;margin-left:5px;">BEST DEAL</span>` 
+                : ""}
+
+                <br>
+
+                <small>
+                    <span style="color:#00ffcc;font-weight:600">${phone.price}</span> | 
+                    ${phone.ram} | ${phone.camera}
+                </small>
+            </div>
+
+            <button onclick="window.open('${phone.link}','_blank')">
+                Buy Now
+            </button>
+        </div>
+        `;
+    }
+}
+
+renderCards();
