@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechCompare Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0f2c;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 60px}
+.logo{font-weight:700;font-size:20px}
+nav a{margin:0 15px;text-decoration:none;color:#cfd3ff}
+.btn{background:#5b6cff;padding:10px 20px;border-radius:25px;color:#fff;text-decoration:none}
+
+.compare-section{padding:60px;text-align:center}
+.search-box{position:relative;display:inline-block}
+#search{padding:10px;border-radius:10px;border:none;width:300px}
+
+.suggestions{position:absolute;top:45px;left:0;background:#11174a;width:100%;border-radius:10px;display:none;z-index:10}
+.suggestion-item{display:flex;align-items:center;gap:10px;padding:10px;cursor:pointer}
+.suggestion-item:hover{background:#5b6cff}
+.suggestion-item img{width:40px;height:40px;border-radius:8px}
+
+.compare-box select,.compare-box button{padding:10px;margin:10px;border-radius:10px;border:none}
+.compare-box button{background:#5b6cff;color:#fff;cursor:pointer}
+
+.result-table{margin-top:30px;display:none}
+.result-table table{width:100%;max-width:600px;margin:auto;border-collapse:collapse}
+.result-table th,.result-table td{border:1px solid #444;padding:10px}
+
+footer{text-align:center;padding:20px;margin-top:60px;color:#888}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">TechCompare Hub</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Compare</a>
+<a href="#">Top Phones</a>
+<a href="#">Reviews</a>
+<a href="#">Contact</a>
+</nav>
+<a href="#" class="btn">Get Started</a>
+</header>
+
+<section class="compare-section">
+<h2>Smart Search & Compare</h2>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search phone..." onkeyup="showSuggestions()">
+<div class="suggestions" id="suggestions"></div>
+</div>
+
+<div class="compare-box">
+<select id="phone1"></select>
+<select id="phone2"></select>
+<button onclick="comparePhones()">Compare Now</button>
+</div>
+
+<div class="result-table" id="result">
+<table>
+<tr><th>Feature</th><th>Phone 1</th><th>Phone 2</th></tr>
+<tr><td>RAM</td><td id="ram1"></td><td id="ram2"></td></tr>
+<tr><td>Camera</td><td id="cam1"></td><td id="cam2"></td></tr>
+<tr><td>Battery</td><td id="bat1"></td><td id="bat2"></td></tr>
+<tr><td>Buy</td><td><a id="buy1" target="_blank">Buy Now</a></td><td><a id="buy2" target="_blank">Buy Now</a></td></tr>
+<tr><th>Feature</th><th>Phone 1</th><th>Phone 2</th></tr>
+<tr><td>RAM</td><td id="ram1"></td><td id="ram2"></td></tr>
+<tr><td>Camera</td><td id="cam1"></td><td id="cam2"></td></tr>
+<tr><td>Battery</td><td id="bat1"></td><td id="bat2"></td></tr>
+</table>
+</div>
+</section>
+
+<footer><p>© 2026 TechCompare Hub</p></footer>
+<p style="text-align:center;color:#aaa;font-size:12px;">This site contains affiliate links. We may earn a commission.</p>
+
+<script>
+const phones = {
+"iPhone 14":{ram:"6GB",camera:"12MP",battery:"3279mAh",price:"$799",img:"https://via.placeholder.com/50",link:"https://amzn.to/yourlink1"},
+"Samsung S23":{ram:"8GB",camera:"50MP",battery:"3900mAh",price:"$699",img:"https://via.placeholder.com/50",link:"https://amzn.to/yourlink2"},
+"Xiaomi 13":{ram:"8GB",camera:"50MP",battery:"4500mAh",price:"$599",img:"https://via.placeholder.com/50",link:"https://amzn.to/yourlink3"},
+"OnePlus 11":{ram:"12GB",camera:"50MP",battery:"5000mAh",price:"$749",img:"https://via.placeholder.com/50",link:"https://amzn.to/yourlink4"}
+};
+
+// original phones object removed below
+"iPhone 14":{ram:"6GB",camera:"12MP",battery:"3279mAh",price:"$799",img:"https://via.placeholder.com/50"},
+"Samsung S23":{ram:"8GB",camera:"50MP",battery:"3900mAh",price:"$699",img:"https://via.placeholder.com/50"},
+"Xiaomi 13":{ram:"8GB",camera:"50MP",battery:"4500mAh",price:"$599",img:"https://via.placeholder.com/50"},
+"OnePlus 11":{ram:"12GB",camera:"50MP",battery:"5000mAh",price:"$749",img:"https://via.placeholder.com/50"}
+};
+
+const phoneNames = Object.keys(phones);
+let selectToggle = true; // alternate selection
+
+const p1=document.getElementById("phone1");
+const p2=document.getElementById("phone2");
+phoneNames.forEach(name=>{
+let opt1=new Option(name,name);
+let opt2=new Option(name,name);
+p1.add(opt1);
+p2.add(opt2);
+});
+
+function showSuggestions(){
+let input=document.getElementById("search").value.toLowerCase();
+let box=document.getElementById("suggestions");
+box.innerHTML="";
+
+if(!input){box.style.display="none";return;}
+
+phoneNames.forEach(name=>{
+if(name.toLowerCase().includes(input)){
+let phone=phones[name];
+
+let div=document.createElement("div");
+div.className="suggestion-item";
+
+div.innerHTML=`
+<img src="${phone.img}">
+<div>
+<strong>${name}</strong><br>
+<small>${phone.ram} | ${phone.camera} | ${phone.price}</small>
+</div>
+`;
+
+// alternate select phone1 & phone2
+ div.onclick=()=>{
+ if(selectToggle){
+ document.getElementById("phone1").value=name;
+ }else{
+ document.getElementById("phone2").value=name;
+ }
+ selectToggle=!selectToggle;
+ document.getElementById("search").value=name;
+ box.style.display="none";
+ };
+
+box.appendChild(div);
+}
+});
+
+box.style.display="block";
+}
+
+function comparePhones(){
+let p1=document.getElementById("phone1").value;
+let p2=document.getElementById("phone2").value;
+
+if(!p1 || !p2){alert("Select both phones");return;}
+
+let d1=phones[p1];
+
+
+// affiliate links
+document.getElementById("buy1").href=d1.link;
+document.getElementById("buy2").href=d2.link;
+let d2=phones[p2];
+
+document.getElementById("ram1").innerText=d1.ram;
+document.getElementById("ram2").innerText=d2.ram;
+
+document.getElementById("cam1").innerText=d1.camera;
+document.getElementById("cam2").innerText=d2.camera;
+
+document.getElementById("bat1").innerText=d1.battery;
+document.getElementById("bat2").innerText=d2.battery;
+
+document.getElementById("result").style.display="block";
+}
+
+// AMAZON API PLACEHOLDER (frontend only demo)
+async function fetchAmazonData(query){
+console.log("Future: connect Amazon API for", query);
+}
+</script>
+
+</body>
+</html>
