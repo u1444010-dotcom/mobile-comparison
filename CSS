@@ -1,39 +1,29 @@
+.search-box{
+    position:relative;
+    display:inline-block;
+}
+
 .suggestions{
     position:absolute;
     top:45px;
     left:0;
     width:100%;
     background:#11174a;
-    border-radius:12px;
+    border-radius:10px;
     display:none;
-    z-index:100;
-    max-height:250px;
+    z-index:999;
+    max-height:200px;
     overflow-y:auto;
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
-    animation:fadeIn 0.2s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(-10px);}
-    to{opacity:1; transform:translateY(0);}
 }
 
 .suggestion-item{
     display:flex;
-    align-items:center;
     gap:10px;
+    align-items:center;
     padding:10px;
     cursor:pointer;
-    transition:0.2s;
 }
 
 .suggestion-item:hover{
     background:#5b6cff;
-    transform:scale(1.02);
-}
-
-.no-result{
-    padding:10px;
-    color:#aaa;
-    text-align:center;
 }
