@@ -1,13 +1,9 @@
-function highlight(text, query){
-    let regex = new RegExp(query, "gi");
-    return text.replace(regex, match => `<span style="color:#00ffcc">${match}</span>`);
-}
+const searchInput = document.getElementById("search");
+const box = document.getElementById("suggestions");
 
-function showSuggestions(){
+searchInput.addEventListener("input", function(){
 
-    let input = document.getElementById("search").value.toLowerCase();
-    let box = document.getElementById("suggestions");
-
+    let input = this.value.toLowerCase();
     box.innerHTML = "";
 
     if(input.trim() === ""){
@@ -17,9 +13,10 @@ function showSuggestions(){
 
     let found = false;
 
-    for(let name in phones){
+    Object.keys(phones).forEach(name => {
 
         if(name.toLowerCase().includes(input)){
+
             let phone = phones[name];
 
             let div = document.createElement("div");
@@ -28,27 +25,24 @@ function showSuggestions(){
             div.innerHTML = `
                 <img src="${phone.img}" width="40">
                 <div>
-                    <strong>${highlight(name, input)}</strong><br>
-                    <small>${phone.price} | ${phone.ram} | ${phone.camera}</small>
+                    <strong>${name}</strong><br>
+                    <small>${phone.price} | ${phone.ram}</small>
                 </div>
             `;
 
             div.onclick = () => {
-                document.getElementById("search").value = name;
+                searchInput.value = name;
                 box.style.display = "none";
             };
 
             box.appendChild(div);
             found = true;
         }
-    }
+    });
 
-    // ❌ No results UI
     if(!found){
-        box.innerHTML = `<div class="no-result">No phones found 😕</div>`;
-        box.style.display = "block";
-        return;
+        box.innerHTML = `<div style="padding:10px;color:#aaa;">No results found 😕</div>`;
     }
 
     box.style.display = "block";
-}
+});
