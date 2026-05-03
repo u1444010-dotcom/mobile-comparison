@@ -1,0 +1,54 @@
+function highlight(text, query){
+    let regex = new RegExp(query, "gi");
+    return text.replace(regex, match => `<span style="color:#00ffcc">${match}</span>`);
+}
+
+function showSuggestions(){
+
+    let input = document.getElementById("search").value.toLowerCase();
+    let box = document.getElementById("suggestions");
+
+    box.innerHTML = "";
+
+    if(input.trim() === ""){
+        box.style.display = "none";
+        return;
+    }
+
+    let found = false;
+
+    for(let name in phones){
+
+        if(name.toLowerCase().includes(input)){
+            let phone = phones[name];
+
+            let div = document.createElement("div");
+            div.className = "suggestion-item";
+
+            div.innerHTML = `
+                <img src="${phone.img}" width="40">
+                <div>
+                    <strong>${highlight(name, input)}</strong><br>
+                    <small>${phone.price} | ${phone.ram} | ${phone.camera}</small>
+                </div>
+            `;
+
+            div.onclick = () => {
+                document.getElementById("search").value = name;
+                box.style.display = "none";
+            };
+
+            box.appendChild(div);
+            found = true;
+        }
+    }
+
+    // ❌ No results UI
+    if(!found){
+        box.innerHTML = `<div class="no-result">No phones found 😕</div>`;
+        box.style.display = "block";
+        return;
+    }
+
+    box.style.display = "block";
+}
